@@ -2,6 +2,8 @@ from django.urls import path
 
 from . import views
 
+# URL의 구분을 위해서 URLconf에 namespace를 추가해 준다.
+app_name = 'polls'
 urlpatterns = [
     # ex: /polls/
     path('', views.index, name='index'),

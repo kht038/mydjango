@@ -1,0 +1,8 @@
+<h1>{{ question.question_text }}</h1>
+<ul>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+</ul>
+
+<!-- 템플릿에 대한 자세한 정보 ->  https://docs.djangoproject.com/ko/4.0/topics/templates/ -->
