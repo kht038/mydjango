@@ -15,7 +15,10 @@ class Question(models.Model):
         return self.question_text
 
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        #return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+        # datetime.timedelta 를 통해 days라는 인수에 값을 넣어 지금으로부터 인수값 만큼 지난 날을 얻는다.
 
 
 class Choice(models.Model):
